@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You've Been Hacked!</title>
+<style>
+       body {
+           background-color: black;
+           color: red;
+           text-align: center;
+           font-family: 'Courier New', Courier, monospace;
+           margin-top: 20%;
+       }
+       h1 {
+           font-size: 50px;
+       }
+       p {
+           font-size: 24px;
+       }
+</style>
+<script>
+       function startCountdown() {
+           var count = 1;
+           var countdownElement = document.getElementById('countdown');
+           var messageElement = document.getElementById('message');
+           var interval = setInterval(function() {
+               countdownElement.innerHTML = count;
+               count++;
+               if (count > 3) {
+                   clearInterval(interval);
+                   countdownElement.style.display = 'none';
+                   messageElement.style.display = 'block';
+               }
+           }, 1000);  // 1 second delay
+       }
+</script>
+</head>
+<body onload="startCountdown()">
+<h1 id="countdown">1</h1>
+<div id="message" style="display:none;">
+<p>All of your data and photos have been copied, and you have been hacked!</p>
+<p>تم نسخ جميع بياناتك وصورك، لقد تم اختراقك!</p>
+<p>Just kidding! This is a prank 😄</p>
+</div>
+</body>
+</html>
